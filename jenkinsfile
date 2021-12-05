@@ -10,33 +10,19 @@ agent any
 		
 		}
 		}
-		
-}
-}
-   provider "google" {
- 
-    project = "veera999"
- // credentials = file("srinu2-14f292a3a4e3.json")
-//  region  = "us-east1"
-       }
-stage ('VM-create')
-sh "google_compute_instance" "vm-instance" {
-sh  name         = "test"
-sh  machine_type = "f1-micro"
-sh  zone         = "us-east1-b"
 
 
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-9"
-    }
-  }
-    
-  network_interface {
-    network = "default"
+stage ('vm-create')  {
+steps {
+ sh 'gcloud compute instance create vbn'
+ }
+ }
 
-    access_config {
-      // Ephemeral IP
-    }
-  }
+
+
+
+
+
 }
+}
+   
