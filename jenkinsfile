@@ -14,7 +14,7 @@ agent any
 
 stage ('vm-create')  {
 steps {
- sh 'gcloud compute instances create vbn'
+ sh 'gcloud compute instances create vbn --zone=asia-east2-a'
  }
  }
 
