@@ -20,10 +20,10 @@ agent any
 //  region  = "us-east1"
        }
 stage ('VM-create')
-sh '"google_compute_instance" "vm-instance"' {
-sh  'name         = "test"'
-sh  'machine_type = "f1-micro"'
-sh  'zone         = "us-east1-b"'
+sh "google_compute_instance" "vm-instance" {
+sh  name         = "test"
+sh  machine_type = "f1-micro"
+sh  zone         = "us-east1-b"
 
 
   boot_disk {
