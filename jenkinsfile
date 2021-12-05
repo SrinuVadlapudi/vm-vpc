@@ -13,17 +13,17 @@ agent any
 		
 }
 }
-//   provider "google" {
+   provider "google" {
  
-   // project = "veera999"
+    project = "veera999"
  // credentials = file("srinu2-14f292a3a4e3.json")
 //  region  = "us-east1"
-  //     }
+       }
 stage ('VM-create')
-resource "google_compute_instance" "vm-instance" {
-  name         = "test"
-  machine_type = "f1-micro"
-  zone         = "us-east1-b"
+sh '"google_compute_instance" "vm-instance"' {
+sh  'name         = "test"'
+sh  'machine_type = "f1-micro"'
+sh  'zone         = "us-east1-b"'
 
 
   boot_disk {
