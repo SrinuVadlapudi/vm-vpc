@@ -23,9 +23,13 @@ steps {
 sh 'gcloud compute networks create klm'
 }
 }
-
-
-
+ 
+ stage ('list vpc') {
+ steps {
+ sh 'gcloud compute networks list'
+ }
+ }
+ 
 }
 }
    
