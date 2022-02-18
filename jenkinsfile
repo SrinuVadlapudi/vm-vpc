@@ -14,13 +14,13 @@ agent any
 
 stage ('vm-create')  {
 steps {
- sh 'gcloud compute instances create vbn --project=siva99 --zone=asia-east2-a'
+ sh 'gcloud compute instances create vbn --zone=asia-east2-a'
  }
  }
 
 stage ('vm-vpc') {
 steps {
-sh 'gcloud compute networks create klm --project=siva99'
+sh 'gcloud compute networks create klm'
 }
 }
  
