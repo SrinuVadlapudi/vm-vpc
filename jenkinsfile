@@ -14,7 +14,7 @@ agent any
 
 stage ('vm-create')  {
 steps {
- sh 'gcloud compute instances create vbn --zone=asia-east2-a'
+// sh 'gcloud compute instances create vbn --zone=asia-east2-a'
  }
  }
 
@@ -25,7 +25,7 @@ steps {
 }
 stage ('vm-delection')  {
 steps {
- //        sh 'gcloud compute instances delete vbn --zone=asia-east2-a'
+   sh 'gcloud compute instances delete vbn --zone=asia-east2-a'
  }
  }
 
