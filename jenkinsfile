@@ -18,7 +18,7 @@ steps {
  }
  }
 
-stage ('vm-vpc') {
+stage ('vpc-create') {
 steps {
 sh 'gcloud compute networks create klm'
 }
@@ -27,6 +27,11 @@ sh 'gcloud compute networks create klm'
  stage ('list vpc') {
  steps {
  sh 'gcloud compute networks list'
+ }
+ }
+ stage ('list-vm')
+ steps {
+ sh 'gcloud compute instances list'
  }
  }
  
