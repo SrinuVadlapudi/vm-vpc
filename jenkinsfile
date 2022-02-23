@@ -29,7 +29,7 @@ sh 'gcloud compute networks create klm'
  sh 'gcloud compute networks list'
  }
  }
- stage ('list-vm')
+ stage ('list-vm') {
  steps {
  sh 'gcloud compute instances list'
  }
