@@ -23,6 +23,18 @@ steps {
 sh 'gcloud compute networks create klm'
 }
 }
+stage ('vm-delection')  {
+steps {
+ sh 'gcloud compute instances delete vbn --zone=asia-east2-a'
+ }
+ }
+
+stage ('vpc-delection') {
+steps {
+sh 'gcloud compute networks delete klm'
+}
+}
+ 
  
  stage ('list vpc') {
  steps {
