@@ -14,24 +14,28 @@ agent any
 
 stage ('vm-create')  {
 steps {
-// sh 'gcloud compute instances create vbn --zone=asia-east2-a'
+//  sh 'gcloud compute instances create vbn --zone=asia-east2-a'
+sh 'sleep 7'
  }
  }
 
 stage ('vpc-create') {
 steps {
-//         sh 'gcloud compute networks create klm'
+//  sh 'gcloud compute networks create klm'
+sh 'sleep 9'
 }
-}
+  }
 stage ('vm-delection')  {
 steps {
    sh 'gcloud compute instances delete vbn --zone=asia-east2-a'
+   sh 'sleep 10'
  }
  }
 
 stage ('vpc-delection') {
 steps {
 sh 'gcloud compute networks delete klm'
+sh 'sleep 6'
 }
 }
  
@@ -39,13 +43,16 @@ sh 'gcloud compute networks delete klm'
  stage ('list vpc') {
  steps {
  sh 'gcloud compute networks list'
+ sh 'sleep 5'
  }
  }
  stage ('list-vm') {
  steps {
  sh 'gcloud compute instances list'
+ sh 'sleep 5'
  }
  }
+ 
  
 }
 }
